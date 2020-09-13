@@ -1,0 +1,27 @@
+
+module IF(
+  //input Branch_abs,
+  input Branch_rel_en,
+  input ALU_set_one,
+  input [7:0] Target,
+  input Init,
+  input CLK,
+  output logic Halt,
+  output logic [15:0] PC
+  );
+  
+  always_ff @(posedge CLK)
+    if (Init)
+      PC <= 0;
+    else if (PC >= 1000) begin
+      PC <= PC;
+	  Halt <= 1'b1;
+	end
+    //else if (Branch_abs)
+    //  PC <= Target;
+    else if (Branch_rel_en && ALU_set_one)
+      PC <= Target + PC;
+    else
+      PC <= PC + 1;
+
+endmodule 
