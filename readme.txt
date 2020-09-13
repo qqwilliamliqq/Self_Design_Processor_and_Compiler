@@ -1,3 +1,15 @@
+9 bit prosessor design with systemVerilog.
+ALU with:
+add
+xor
+logic left shift
+logic right shift
+set not equal zero
+set equal zero
+
+Compiler from assembley to machine code with JAVA.
+Complete following 3 program.
+
 All 3 programs worked.
 Simply run test bench and you will see the result.
 The modifications we've done to the test bench:
